@@ -433,11 +433,35 @@ console.log("---- PRUEBA BORRAR LIBRO ----");
 borrarLibro(2);   // probá borrar "El principito"
 console.log(libros);
 
-console.log("---- PRUEBA MOSTRAR USUARIOS ----");
+console.log("ESTOY EN EL ARCHIVO CORRECTO"); // tuve problemitas jejeje
+
+
+    // Función para mostrar la lista de usuarios
+function mostrarTodosLosUsuarios() {
+    console.log("---- LISTADO DE USUARIOS ----");
+    usuarios.forEach(usuario => {
+        console.log(`ID: ${usuario.id} - Nombre: ${usuario.nombre} - Email: ${usuario.email}`);
+    });
+}
+
+// Llamada a la función para que se ejecute en la terminal
 mostrarTodosLosUsuarios();
 
 console.log("---- PRUEBA REGISTRAR USUARIO ----");
 registrarUsuario("Carla", "carla@email.com");
+
+
+// Definimos la función para que Node sepa qué hacer
+function mostrarTodosLosUsuarios() {
+    console.log("---- LISTADO DE USUARIOS ----");
+    if (typeof usuarios !== 'undefined' && usuarios.length > 0) {
+        usuarios.forEach(u => console.log(`ID: ${u.id} - Nombre: ${u.nombre}`));
+    } else {
+        console.log("No hay usuarios cargados o el array 'usuarios' no existe.");
+    }
+}
+
+// Ahora sí la llamamos para que se ejecute
 mostrarTodosLosUsuarios();
 
 console.log("---- PRUEBA BUSCAR USUARIO ----");
